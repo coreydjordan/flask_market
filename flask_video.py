@@ -20,6 +20,7 @@ class Item(db.Model):
     
     def __repr__(self):
         return f'Item {self.name}'
+    
 db.create_all()
 db.session.commit()
 
@@ -42,8 +43,8 @@ add_items()
 #     print(item.name, item.price)
 
 #!iterate over the items and set a parameter to filter by  
-# for item in Item.query.filter_by(price=500):
-#     print(item.name)
+for item in Item.query.filter_by(price=500):
+    print(item.name)
 
 
 @app.route('/')
